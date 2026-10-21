@@ -1,0 +1,946 @@
+{
+ "POST /runs {}": {
+  "method": "POST",
+  "path": "/runs",
+  "query": {},
+  "body": {
+   "profile_id": 1,
+   "mode": "full",
+   "dry_run": false
+  },
+  "response": {
+   "id": 1,
+   "profile_id": 1,
+   "mode": "full",
+   "dry_run": false,
+   "status": "succeeded",
+   "stage": null,
+   "progress": null,
+   "started_at": "2026-10-21T06:23:43Z",
+   "finished_at": "2026-10-21T06:23:43Z",
+   "duration_s": 0,
+   "stats": {
+    "listings_seen": 3,
+    "unique_jobs": 3,
+    "new_jobs": 3,
+    "known_jobs": 0,
+    "duplicates": 0,
+    "passed_filters": 3,
+    "scored": 3,
+    "matched": 2,
+    "drafts_generated": 2,
+    "gmail_drafts_created": 0,
+    "errors": null
+   },
+   "errors": []
+  }
+ },
+ "GET /runs {\"page\": 1, \"page_size\": 20}": {
+  "method": "GET",
+  "path": "/runs",
+  "query": {
+   "page": 1,
+   "page_size": 20
+  },
+  "body": null,
+  "response": {
+   "items": [
+    {
+     "id": 1,
+     "profile_id": 1,
+     "mode": "full",
+     "dry_run": false,
+     "status": "succeeded",
+     "stage": null,
+     "progress": null,
+     "started_at": "2026-10-21T06:23:43Z",
+     "finished_at": "2026-10-21T06:23:43Z",
+     "duration_s": 0,
+     "stats": {
+      "listings_seen": 3,
+      "unique_jobs": 3,
+      "new_jobs": 3,
+      "known_jobs": 0,
+      "duplicates": 0,
+      "passed_filters": 3,
+      "scored": 3,
+      "matched": 2,
+      "drafts_generated": 2,
+      "gmail_drafts_created": 0,
+      "errors": null
+     },
+     "errors": []
+    }
+   ],
+   "total": 1
+  }
+ },
+ "GET /runs/1 {}": {
+  "method": "GET",
+  "path": "/runs/1",
+  "query": {},
+  "body": null,
+  "response": {
+   "id": 1,
+   "profile_id": 1,
+   "mode": "full",
+   "dry_run": false,
+   "status": "succeeded",
+   "stage": null,
+   "progress": null,
+   "started_at": "2026-10-21T06:23:43Z",
+   "finished_at": "2026-10-21T06:23:43Z",
+   "duration_s": 0,
+   "stats": {
+    "listings_seen": 3,
+    "unique_jobs": 3,
+    "new_jobs": 3,
+    "known_jobs": 0,
+    "duplicates": 0,
+    "passed_filters": 3,
+    "scored": 3,
+    "matched": 2,
+    "drafts_generated": 2,
+    "gmail_drafts_created": 0,
+    "errors": null
+   },
+   "errors": []
+  }
+ },
+ "GET /jobs {\"page_size\": 50}": {
+  "method": "GET",
+  "path": "/jobs",
+  "query": {
+   "page_size": 50
+  },
+  "body": null,
+  "response": {
+   "items": [
+    {
+     "id": 3,
+     "external_id": "HA0003",
+     "title": "AI Engineer",
+     "company": null,
+     "country": "UAE",
+     "city": "UAE",
+     "category": "IT",
+     "sub_category": "x",
+     "experience_level": "10+",
+     "hr_email": "r3@corp3.com",
+     "score": 90,
+     "relevant": true,
+     "reason": "reason for AI Engineer",
+     "status": "draft_generated",
+     "first_seen_at": "2026-10-21T06:23:43Z",
+     "last_seen_at": "2026-10-21T06:23:43Z",
+     "listing_status": "active",
+     "has_draft": true,
+     "recruiter_contacted_at": null
+    },
+    {
+     "id": 2,
+     "external_id": "HA0002",
+     "title": "Sales Manager",
+     "company": null,
+     "country": "UAE",
+     "city": "UAE",
+     "category": "IT",
+     "sub_category": "x",
+     "experience_level": "10+",
+     "hr_email": "r2@corp2.com",
+     "score": 30,
+     "relevant": false,
+     "reason": "reason for Sales Manager",
+     "status": "discovered",
+     "first_seen_at": "2026-10-21T06:23:43Z",
+     "last_seen_at": "2026-10-21T06:23:43Z",
+     "listing_status": "active",
+     "has_draft": false,
+     "recruiter_contacted_at": null
+    },
+    {
+     "id": 1,
+     "external_id": "HA0001",
+     "title": "AI Architect",
+     "company": null,
+     "country": "UAE",
+     "city": "UAE",
+     "category": "IT",
+     "sub_category": "x",
+     "experience_level": "10+",
+     "hr_email": "r1@corp1.com",
+     "score": 90,
+     "relevant": true,
+     "reason": "reason for AI Architect",
+     "status": "draft_generated",
+     "first_seen_at": "2026-10-21T06:23:43Z",
+     "last_seen_at": "2026-10-21T06:23:43Z",
+     "listing_status": "active",
+     "has_draft": true,
+     "recruiter_contacted_at": null
+    }
+   ],
+   "total": 3
+  }
+ },
+ "GET /jobs/3 {}": {
+  "method": "GET",
+  "path": "/jobs/3",
+  "query": {},
+  "body": null,
+  "response": {
+   "id": 3,
+   "external_id": "HA0003",
+   "title": "AI Engineer",
+   "company": null,
+   "country": "UAE",
+   "city": "UAE",
+   "category": "IT",
+   "sub_category": "x",
+   "experience_level": "10+",
+   "hr_email": "r3@corp3.com",
+   "score": 90,
+   "relevant": true,
+   "reason": "reason for AI Engineer",
+   "status": "draft_generated",
+   "first_seen_at": "2026-10-21T06:23:43Z",
+   "last_seen_at": "2026-10-21T06:23:43Z",
+   "listing_status": "active",
+   "has_draft": true,
+   "recruiter_contacted_at": null,
+   "description": "FULL description of AI Engineer HA0003",
+   "skills": [
+    "Go"
+   ],
+   "salary_text": null,
+   "employment_type": null,
+   "work_mode": null,
+   "visa_sponsored": true,
+   "hr_name": null,
+   "hr_phone": null,
+   "posted_at": null,
+   "source": "fake",
+   "assessment": {
+    "score": 90,
+    "relevant": true,
+    "reason": "reason for AI Engineer",
+    "model": "gpt-4o-mini",
+    "created_at": "2026-10-21T06:23:43Z"
+   },
+   "application": {
+    "status": "draft_generated",
+    "notes": "",
+    "applied_at": null,
+    "last_follow_up_at": null
+   },
+   "drafts": [
+    {
+     "id": 2,
+     "recipient": "r3@corp3.com",
+     "subject": "Application: AI Engineer \u2013 A",
+     "status": "generated",
+     "gmail_draft_id": null
+    }
+   ],
+   "history": [
+    {
+     "from": "discovered",
+     "to": "matched",
+     "at": "2026-10-21T06:23:43Z",
+     "by": "system",
+     "note": "score 90"
+    },
+    {
+     "from": "matched",
+     "to": "draft_generated",
+     "at": "2026-10-21T06:23:43Z",
+     "by": "system",
+     "note": "draft #2"
+    }
+   ]
+  }
+ },
+ "PATCH /jobs/3 {}": {
+  "method": "PATCH",
+  "path": "/jobs/3",
+  "query": {},
+  "body": {
+   "status": "applied",
+   "notes": "n"
+  },
+  "response": {
+   "id": 3,
+   "external_id": "HA0003",
+   "title": "AI Engineer",
+   "company": null,
+   "country": "UAE",
+   "city": "UAE",
+   "category": "IT",
+   "sub_category": "x",
+   "experience_level": "10+",
+   "hr_email": "r3@corp3.com",
+   "score": 90,
+   "relevant": true,
+   "reason": "reason for AI Engineer",
+   "status": "applied",
+   "first_seen_at": "2026-10-21T06:23:43Z",
+   "last_seen_at": "2026-10-21T06:23:43Z",
+   "listing_status": "active",
+   "has_draft": true,
+   "recruiter_contacted_at": "2026-10-21T06:23:43Z",
+   "description": "FULL description of AI Engineer HA0003",
+   "skills": [
+    "Go"
+   ],
+   "salary_text": null,
+   "employment_type": null,
+   "work_mode": null,
+   "visa_sponsored": true,
+   "hr_name": null,
+   "hr_phone": null,
+   "posted_at": null,
+   "source": "fake",
+   "assessment": {
+    "score": 90,
+    "relevant": true,
+    "reason": "reason for AI Engineer",
+    "model": "gpt-4o-mini",
+    "created_at": "2026-10-21T06:23:43Z"
+   },
+   "application": {
+    "status": "applied",
+    "notes": "n",
+    "applied_at": "2026-10-21T06:23:43Z",
+    "last_follow_up_at": null
+   },
+   "drafts": [
+    {
+     "id": 2,
+     "recipient": "r3@corp3.com",
+     "subject": "Application: AI Engineer \u2013 A",
+     "status": "generated",
+     "gmail_draft_id": null
+    }
+   ],
+   "history": [
+    {
+     "from": "discovered",
+     "to": "matched",
+     "at": "2026-10-21T06:23:43Z",
+     "by": "system",
+     "note": "score 90"
+    },
+    {
+     "from": "matched",
+     "to": "draft_generated",
+     "at": "2026-10-21T06:23:43Z",
+     "by": "system",
+     "note": "draft #2"
+    },
+    {
+     "from": "draft_generated",
+     "to": "applied",
+     "at": "2026-10-21T06:23:43Z",
+     "by": "user",
+     "note": null
+    }
+   ]
+  }
+ },
+ "POST /jobs/bulk {}": {
+  "method": "POST",
+  "path": "/jobs/bulk",
+  "query": {},
+  "body": {
+   "ids": [
+    3
+   ],
+   "status": "applied"
+  },
+  "response": {
+   "updated": 0
+  }
+ },
+ "GET /drafts {\"page_size\": 50}": {
+  "method": "GET",
+  "path": "/drafts",
+  "query": {
+   "page_size": 50
+  },
+  "body": null,
+  "response": {
+   "items": [
+    {
+     "id": 2,
+     "recipient": "r3@corp3.com",
+     "job_ids": [
+      3
+     ],
+     "job_titles": [
+      "AI Engineer"
+     ],
+     "countries": [
+      "UAE"
+     ],
+     "subject": "Application: AI Engineer \u2013 A",
+     "body": "Dear Hiring Team,\n\nI am writing to express my interest in the role described in your posting. I am a lead architect with 13+ years of experience, currently building production systems for a large enterprise client across several teams.\n\nYour posting asks for retrieval systems that run reliably in production, and that matches my recent work. I built a retrieval assistant over 100K+ documents that people use every day, and I owned its design, delivery and continuing improvement from the first prototype through to a stable service.\n\nMy resume is attached, and it gives more detail on this work. I would welcome the opportunity to discuss the role in a short call at your convenience.\n\nSincerely,\nA\n1 | a@x.com\nl\n",
+     "source": "ai",
+     "status": "generated",
+     "gmail_draft_id": null,
+     "gmail_url": null,
+     "edited": false,
+     "created_at": "2026-10-21T06:23:43Z",
+     "updated_at": "2026-10-21T06:23:43Z"
+    },
+    {
+     "id": 1,
+     "recipient": "r1@corp1.com",
+     "job_ids": [
+      1
+     ],
+     "job_titles": [
+      "AI Architect"
+     ],
+     "countries": [
+      "UAE"
+     ],
+     "subject": "Application: AI Architect \u2013 A",
+     "body": "Dear Hiring Team,\n\nI am writing to express my interest in the role described in your posting. I am a lead architect with 13+ years of experience, currently building production systems for a large enterprise client across several teams.\n\nYour posting asks for retrieval systems that run reliably in production, and that matches my recent work. I built a retrieval assistant over 100K+ documents that people use every day, and I owned its design, delivery and continuing improvement from the first prototype through to a stable service.\n\nMy resume is attached, and it gives more detail on this work. I would welcome the opportunity to discuss the role in a short call at your convenience.\n\nSincerely,\nA\n1 | a@x.com\nl\n",
+     "source": "ai",
+     "status": "generated",
+     "gmail_draft_id": null,
+     "gmail_url": null,
+     "edited": false,
+     "created_at": "2026-10-21T06:23:43Z",
+     "updated_at": "2026-10-21T06:23:43Z"
+    }
+   ],
+   "total": 2
+  }
+ },
+ "GET /drafts/2 {}": {
+  "method": "GET",
+  "path": "/drafts/2",
+  "query": {},
+  "body": null,
+  "response": {
+   "id": 2,
+   "recipient": "r3@corp3.com",
+   "job_ids": [
+    3
+   ],
+   "job_titles": [
+    "AI Engineer"
+   ],
+   "countries": [
+    "UAE"
+   ],
+   "subject": "Application: AI Engineer \u2013 A",
+   "body": "Dear Hiring Team,\n\nI am writing to express my interest in the role described in your posting. I am a lead architect with 13+ years of experience, currently building production systems for a large enterprise client across several teams.\n\nYour posting asks for retrieval systems that run reliably in production, and that matches my recent work. I built a retrieval assistant over 100K+ documents that people use every day, and I owned its design, delivery and continuing improvement from the first prototype through to a stable service.\n\nMy resume is attached, and it gives more detail on this work. I would welcome the opportunity to discuss the role in a short call at your convenience.\n\nSincerely,\nA\n1 | a@x.com\nl\n",
+   "source": "ai",
+   "status": "generated",
+   "gmail_draft_id": null,
+   "gmail_url": null,
+   "edited": false,
+   "created_at": "2026-10-21T06:23:43Z",
+   "updated_at": "2026-10-21T06:23:43Z"
+  }
+ },
+ "PATCH /drafts/2 {}": {
+  "method": "PATCH",
+  "path": "/drafts/2",
+  "query": {},
+  "body": {
+   "subject": "S"
+  },
+  "response": {
+   "id": 2,
+   "recipient": "r3@corp3.com",
+   "job_ids": [
+    3
+   ],
+   "job_titles": [
+    "AI Engineer"
+   ],
+   "countries": [
+    "UAE"
+   ],
+   "subject": "S",
+   "body": "Dear Hiring Team,\n\nI am writing to express my interest in the role described in your posting. I am a lead architect with 13+ years of experience, currently building production systems for a large enterprise client across several teams.\n\nYour posting asks for retrieval systems that run reliably in production, and that matches my recent work. I built a retrieval assistant over 100K+ documents that people use every day, and I owned its design, delivery and continuing improvement from the first prototype through to a stable service.\n\nMy resume is attached, and it gives more detail on this work. I would welcome the opportunity to discuss the role in a short call at your convenience.\n\nSincerely,\nA\n1 | a@x.com\nl\n",
+   "source": "ai",
+   "status": "generated",
+   "gmail_draft_id": null,
+   "gmail_url": null,
+   "edited": true,
+   "created_at": "2026-10-21T06:23:43Z",
+   "updated_at": "2026-10-21T06:23:43Z"
+  }
+ },
+ "POST /drafts/gmail {}": {
+  "method": "POST",
+  "path": "/drafts/gmail",
+  "query": {},
+  "body": {
+   "ids": [
+    2,
+    1
+   ]
+  },
+  "response": {
+   "created": [
+    {
+     "id": 2,
+     "gmail_draft_id": "gd"
+    },
+    {
+     "id": 1,
+     "gmail_draft_id": "gd"
+    }
+   ],
+   "failed": []
+  }
+ },
+ "GET /settings {}": {
+  "method": "GET",
+  "path": "/settings",
+  "query": {},
+  "body": null,
+  "response": {
+   "sender": {
+    "name": "A",
+    "phone": "1",
+    "email": "a@x.com",
+    "linkedin": "l"
+   },
+   "preferences_text": "",
+   "availability_line": "",
+   "openai_model": "gpt-4o-mini",
+   "openai_key_set": true,
+   "resume": {
+    "id": 1,
+    "filename": "Resume.pdf",
+    "uploaded_at": "2026-10-21T06:23:42Z",
+    "chars": 88
+   },
+   "gmail": {
+    "client_secret_present": true,
+    "connected": true,
+    "account": null
+   }
+  }
+ },
+ "GET /profiles {}": {
+  "method": "GET",
+  "path": "/profiles",
+  "query": {},
+  "body": null,
+  "response": [
+   {
+    "id": 1,
+    "name": "Default",
+    "categories": [
+     "IT"
+    ],
+    "min_years": 10,
+    "max_years": null,
+    "countries_include": [],
+    "countries_exclude": [
+     "INDIA"
+    ],
+    "keywords_include": [],
+    "keywords_exclude": [],
+    "threshold": 60,
+    "score_gap": 10,
+    "cooldown_days": 0,
+    "auto_gmail_drafts": false
+   }
+  ]
+ },
+ "GET /gmail/status {}": {
+  "method": "GET",
+  "path": "/gmail/status",
+  "query": {},
+  "body": null,
+  "response": {
+   "client_secret_present": true,
+   "connected": true,
+   "account": null
+  }
+ },
+ "GET /analytics/summary {}": {
+  "method": "GET",
+  "path": "/analytics/summary",
+  "query": {},
+  "body": null,
+  "response": {
+   "kpis": {
+    "total_unique_jobs": 3,
+    "latest_run_discovered": 3,
+    "new_since_previous_run": 3,
+    "previously_seen": 0,
+    "passed_filters": 3,
+    "matched": 2,
+    "shortlisted": 2,
+    "drafts_generated": 2,
+    "gmail_drafts_created": 2,
+    "applied": 1,
+    "employer_replied": 0,
+    "interviews": 0,
+    "offers": 0
+   },
+   "latest_run": {
+    "id": 1,
+    "profile_id": 1,
+    "mode": "full",
+    "dry_run": false,
+    "status": "succeeded",
+    "stage": null,
+    "progress": null,
+    "started_at": "2026-10-21T06:23:43Z",
+    "finished_at": "2026-10-21T06:23:43Z",
+    "duration_s": 0,
+    "stats": {
+     "listings_seen": 3,
+     "unique_jobs": 3,
+     "new_jobs": 3,
+     "known_jobs": 0,
+     "duplicates": 0,
+     "passed_filters": 3,
+     "scored": 3,
+     "matched": 2,
+     "drafts_generated": 2,
+     "gmail_drafts_created": 0,
+     "errors": null
+    },
+    "errors": []
+   },
+   "last_successful_run": {
+    "id": 1,
+    "profile_id": 1,
+    "mode": "full",
+    "dry_run": false,
+    "status": "succeeded",
+    "stage": null,
+    "progress": null,
+    "started_at": "2026-10-21T06:23:43Z",
+    "finished_at": "2026-10-21T06:23:43Z",
+    "duration_s": 0,
+    "stats": {
+     "listings_seen": 3,
+     "unique_jobs": 3,
+     "new_jobs": 3,
+     "known_jobs": 0,
+     "duplicates": 0,
+     "passed_filters": 3,
+     "scored": 3,
+     "matched": 2,
+     "drafts_generated": 2,
+     "gmail_drafts_created": 0,
+     "errors": null
+    },
+    "errors": []
+   },
+   "last_attempted_run": {
+    "id": 1,
+    "profile_id": 1,
+    "mode": "full",
+    "dry_run": false,
+    "status": "succeeded",
+    "stage": null,
+    "progress": null,
+    "started_at": "2026-10-21T06:23:43Z",
+    "finished_at": "2026-10-21T06:23:43Z",
+    "duration_s": 0,
+    "stats": {
+     "listings_seen": 3,
+     "unique_jobs": 3,
+     "new_jobs": 3,
+     "known_jobs": 0,
+     "duplicates": 0,
+     "passed_filters": 3,
+     "scored": 3,
+     "matched": 2,
+     "drafts_generated": 2,
+     "gmail_drafts_created": 0,
+     "errors": null
+    },
+    "errors": []
+   }
+  }
+ },
+ "GET /analytics/funnel {}": {
+  "method": "GET",
+  "path": "/analytics/funnel",
+  "query": {},
+  "body": null,
+  "response": [
+   {
+    "stage": "discovered",
+    "label": "Discovered",
+    "count": 3,
+    "of": null,
+    "rate": null
+   },
+   {
+    "stage": "passed_filters",
+    "label": "Passed filters",
+    "count": 3,
+    "of": "discovered",
+    "rate": 1.0
+   },
+   {
+    "stage": "matched",
+    "label": "Matched",
+    "count": 2,
+    "of": "passed_filters",
+    "rate": 0.6667
+   },
+   {
+    "stage": "drafted",
+    "label": "Drafted",
+    "count": 2,
+    "of": "matched",
+    "rate": 1.0
+   },
+   {
+    "stage": "gmail_drafted",
+    "label": "Gmail drafted",
+    "count": 2,
+    "of": "drafted",
+    "rate": 1.0
+   },
+   {
+    "stage": "applied",
+    "label": "Applied",
+    "count": 1,
+    "of": "gmail_drafted",
+    "rate": 0.5
+   },
+   {
+    "stage": "replied",
+    "label": "Replied",
+    "count": 0,
+    "of": "applied",
+    "rate": 0.0
+   },
+   {
+    "stage": "interviewed",
+    "label": "Interviewed",
+    "count": 0,
+    "of": "replied",
+    "rate": null
+   },
+   {
+    "stage": "offered",
+    "label": "Offered",
+    "count": 0,
+    "of": "interviewed",
+    "rate": null
+   }
+  ]
+ },
+ "GET /analytics/rates {}": {
+  "method": "GET",
+  "path": "/analytics/rates",
+  "query": {},
+  "body": null,
+  "response": {
+   "reply_rate": {
+    "value": 0.0,
+    "numerator": 0,
+    "denominator": 1,
+    "definition": "employer_replied / applied (jobs first applied in the range)"
+   },
+   "interview_rate": {
+    "value": 0.0,
+    "numerator": 0,
+    "denominator": 1,
+    "definition": "interview_scheduled / applied (jobs first applied in the range)"
+   },
+   "offer_rate": {
+    "value": 0.0,
+    "numerator": 0,
+    "denominator": 1,
+    "definition": "offer_received / applied (jobs first applied in the range)"
+   }
+  }
+ },
+ "GET /analytics/timeseries {\"bucket\": \"week\", \"metric\": \"applied\"}": {
+  "method": "GET",
+  "path": "/analytics/timeseries",
+  "query": {
+   "metric": "applied",
+   "bucket": "week"
+  },
+  "body": null,
+  "response": [
+   {
+    "date": "2026-07-20",
+    "value": 0
+   },
+   {
+    "date": "2026-07-27",
+    "value": 0
+   },
+   {
+    "date": "2026-08-03",
+    "value": 0
+   },
+   {
+    "date": "2026-08-10",
+    "value": 0
+   },
+   {
+    "date": "2026-08-17",
+    "value": 0
+   },
+   {
+    "date": "2026-08-24",
+    "value": 0
+   },
+   {
+    "date": "2026-08-31",
+    "value": 0
+   },
+   {
+    "date": "2026-09-07",
+    "value": 0
+   },
+   {
+    "date": "2026-09-14",
+    "value": 0
+   },
+   {
+    "date": "2026-09-21",
+    "value": 0
+   },
+   {
+    "date": "2026-09-28",
+    "value": 0
+   },
+   {
+    "date": "2026-10-05",
+    "value": 0
+   },
+   {
+    "date": "2026-10-12",
+    "value": 0
+   },
+   {
+    "date": "2026-10-19",
+    "value": 1
+   }
+  ]
+ },
+ "GET /analytics/distributions {\"by\": \"country\"}": {
+  "method": "GET",
+  "path": "/analytics/distributions",
+  "query": {
+   "by": "country"
+  },
+  "body": null,
+  "response": [
+   {
+    "label": "UAE",
+    "count": 3
+   }
+  ]
+ },
+ "GET /analytics/distributions {\"by\": \"category\"}": {
+  "method": "GET",
+  "path": "/analytics/distributions",
+  "query": {
+   "by": "category"
+  },
+  "body": null,
+  "response": [
+   {
+    "label": "IT",
+    "count": 3
+   }
+  ]
+ },
+ "GET /analytics/distributions {\"by\": \"company\"}": {
+  "method": "GET",
+  "path": "/analytics/distributions",
+  "query": {
+   "by": "company"
+  },
+  "body": null,
+  "response": [
+   {
+    "label": "Unknown",
+    "count": 3
+   }
+  ]
+ },
+ "GET /analytics/distributions {\"by\": \"score\"}": {
+  "method": "GET",
+  "path": "/analytics/distributions",
+  "query": {
+   "by": "score"
+  },
+  "body": null,
+  "response": [
+   {
+    "label": "0-19",
+    "count": 0
+   },
+   {
+    "label": "20-39",
+    "count": 1
+   },
+   {
+    "label": "40-59",
+    "count": 0
+   },
+   {
+    "label": "60-79",
+    "count": 0
+   },
+   {
+    "label": "80-100",
+    "count": 2
+   }
+  ]
+ },
+ "GET /analytics/distributions {\"by\": \"status\"}": {
+  "method": "GET",
+  "path": "/analytics/distributions",
+  "query": {
+   "by": "status"
+  },
+  "body": null,
+  "response": [
+   {
+    "label": "applied",
+    "count": 1
+   },
+   {
+    "label": "discovered",
+    "count": 1
+   },
+   {
+    "label": "gmail_draft_created",
+    "count": 1
+   }
+  ]
+ },
+ "GET /analytics/runs {}": {
+  "method": "GET",
+  "path": "/analytics/runs",
+  "query": {},
+  "body": null,
+  "response": [
+   {
+    "run_id": 1,
+    "started_at": "2026-10-21T06:23:43Z",
+    "new_jobs": 3,
+    "known_jobs": 0,
+    "matched": 2,
+    "drafts_generated": 2,
+    "errors": null
+   }
+  ]
+ }
+}

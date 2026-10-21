@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+data/
+client_secret.json
+token.json
+.env
+resume.txt
+linkedin_profile.md
+appdata/
+.DS_Store
+preferences.txt
+.pytest_cache/
+*.log
+uv.lock
