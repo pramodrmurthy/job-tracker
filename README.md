@@ -35,7 +35,7 @@ Development: `uv run uvicorn jobtracker.main:app --reload` plus `cd frontend && 
 UI without a backend: `cd frontend && npm run dev:mock`.
 
 ## Configure
-- `.env` in this folder: `GEMINI_API_KEY=...` and optionally `GEMINI_MODEL=...` (default `gemini-2.5-flash`).
+- `.env` in this folder: `GEMINI_API_KEY=...` and optionally `GEMINI_MODEL=...` (default `gemini-3.8-flash`).
 - Gmail: put Google's OAuth `client_secret.json` in this folder, then Settings → Connect Gmail.
 - Everything else (resume, preferences, filters, sender details) is in the app's Settings page.
 

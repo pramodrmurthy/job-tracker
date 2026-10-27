@@ -18,7 +18,7 @@ SOURCE_DELAY_SECONDS = float(os.environ.get("JOBTRACKER_SOURCE_DELAY", "1.0"))
 SOURCE_USER_AGENT = "hireabroad-personal-scraper/0.1 (personal job search; low volume)"
 MAX_RESUME_BYTES = 5 * 1024 * 1024
 SCORE_BATCH_SIZE = 8
-DEFAULT_MODEL = "gemini-2.5-flash"
+DEFAULT_MODEL = "gemini-3.8-flash"
 GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
 
 
