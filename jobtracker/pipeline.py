@@ -286,7 +286,7 @@ def stage_score(session: Session, run: Run, deps: Deps, cfg: dict) -> None:
     _stage(session, run, "score", 0, len(todo))
     scored = matched = failures = 0
     if todo and deps.ask is None:
-        _error(run, "score", "OpenAI is not configured (OPENAI_API_KEY missing); jobs were not scored.")
+        _error(run, "score", "Gemini is not configured (GEMINI_API_KEY missing); jobs were not scored.")
         todo = []
     for start in range(0, len(todo), config.SCORE_BATCH_SIZE):
         _check_cancel(session, run)
@@ -341,7 +341,7 @@ def stage_draft(session: Session, run: Run, deps: Deps, cfg: dict) -> list[int]:
         best = max((j.score if j.score is not None else 100) for j in jobs)
         jobs = [j for j in jobs if (j.score if j.score is not None else 100) >= best - cfg["score_gap"]]
         if deps.ask is None:
-            _error(run, "draft", "OpenAI is not configured; drafts were not generated.")
+            _error(run, "draft", "Gemini is not configured; drafts were not generated.")
             break
         try:
             draft = draft_service.create_draft_for_jobs(session, jobs, recipient, deps.ask, run.id)

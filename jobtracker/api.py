@@ -146,7 +146,7 @@ def settings_dict(session: Session) -> dict:
     return {"sender": {**DEFAULT_SETTINGS["sender"], **(get_setting(session, "sender") or {})},
             "preferences_text": get_setting(session, "preferences_text") or "",
             "availability_line": get_setting(session, "availability_line") or "",
-            "openai_model": get_setting(session, "openai_model") or "gpt-4o-mini",
+            "openai_model": get_setting(session, "openai_model") or config.DEFAULT_MODEL,
             "openai_key_set": llm.key_is_set(),
             "resume": resume_dict(resume), "gmail": gmail_status(session)}
 
@@ -171,7 +171,7 @@ def profile_dict(p: SearchProfile) -> dict:
 def default_deps(session: Session) -> pipeline.Deps:
     ask = None
     if llm.key_is_set():
-        ask = llm.make_ask(get_setting(session, "openai_model") or "gpt-4o-mini")
+        ask = llm.make_ask(get_setting(session, "openai_model") or config.DEFAULT_MODEL)
     return pipeline.Deps(source=HireAbroadSource(), ask=ask, gmail_create=gmail_creator())
 
 
@@ -401,7 +401,7 @@ def create_app(deps_factory: Callable[[Session], pipeline.Deps] | None = None, s
             raise HTTPException(409, "Upload a resume first.")
         deps = app.state.deps_factory(session)
         if deps.ask is None:
-            raise HTTPException(409, "OpenAI is not configured (OPENAI_API_KEY missing).")
+            raise HTTPException(409, "Gemini is not configured (GEMINI_API_KEY missing).")
         prefs = get_setting(session, "preferences_text") or ""
         try:
             result = scoring.score_batch(deps.ask, resume.text, prefs, [job]).get(job.id)
@@ -468,7 +468,7 @@ def create_app(deps_factory: Callable[[Session], pipeline.Deps] | None = None, s
             raise HTTPException(409, "This draft is already in Gmail.")
         ask = app.state.deps_factory(session).ask
         if ask is None:
-            raise HTTPException(409, "OpenAI is not configured (OPENAI_API_KEY missing).")
+            raise HTTPException(409, "Gemini is not configured (GEMINI_API_KEY missing).")
         try:
             draft_service.regenerate(session, d, ask)
         except ValueError as e:

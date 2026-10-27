@@ -62,10 +62,10 @@ function GeneralCard({ settings }: { settings: Settings }) {
           {(id) => <textarea id={id} rows={4} className={inputCls} value={f.preferences_text} onChange={(e) => setF({ ...f, preferences_text: e.target.value })} />}</Field></div>
         <div className="md:col-span-2"><Field label="Availability line (optional)" hint="One sentence added to every email, e.g. your notice period and relocation. Leave empty to say nothing about it.">
           {(id) => <input id={id} className={inputCls} value={f.availability_line} onChange={(e) => setF({ ...f, availability_line: e.target.value })} />}</Field></div>
-        <Field label="OpenAI model" hint="The model name used for scoring and writing.">{(id) => <input id={id} className={inputCls} value={f.openai_model} onChange={(e) => setF({ ...f, openai_model: e.target.value })} />}</Field>
+        <Field label="Gemini model" hint="The model name used for scoring and writing.">{(id) => <input id={id} className={inputCls} value={f.openai_model} onChange={(e) => setF({ ...f, openai_model: e.target.value })} />}</Field>
         <div className="text-sm"><div className="font-medium">OpenAI API key</div>
           <p className="mt-1">{settings.openai_key_set ? <Tag tone="green">Key is set</Tag> : <Tag tone="amber">Key not set</Tag>}</p>
-          <p className="mt-1 text-xs text-slate-500">The key is never shown or sent through this page. Set <code>OPENAI_API_KEY</code> in the backend's <code>.env</code> file.</p></div>
+          <p className="mt-1 text-xs text-slate-500">The key is never shown or sent through this page. Set <code>GEMINI_API_KEY</code> in the backend's <code>.env</code> file.</p></div>
         <div className="md:col-span-2"><Button variant="primary" type="submit" disabled={save.isPending}>{save.isPending ? 'Saving…' : 'Save settings'}</Button></div>
       </form>
     </Card>

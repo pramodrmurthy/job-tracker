@@ -18,6 +18,8 @@ SOURCE_DELAY_SECONDS = float(os.environ.get("JOBTRACKER_SOURCE_DELAY", "1.0"))
 SOURCE_USER_AGENT = "hireabroad-personal-scraper/0.1 (personal job search; low volume)"
 MAX_RESUME_BYTES = 5 * 1024 * 1024
 SCORE_BATCH_SIZE = 8
+DEFAULT_MODEL = "gemini-2.5-flash"
+GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
 
 
 def load_env() -> dict[str, str]:
@@ -29,5 +31,5 @@ def load_env() -> dict[str, str]:
             if "=" in line and not line.strip().startswith("#"):
                 key, value = line.split("=", 1)
                 env[key.strip()] = value.strip().strip("'\"")
-    env.update({k: v for k, v in os.environ.items() if k.startswith(("OPENAI_", "TELEGRAM_"))})
+    env.update({k: v for k, v in os.environ.items() if k.startswith(("GEMINI_", "TELEGRAM_"))})
     return env

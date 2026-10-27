@@ -4,7 +4,7 @@ Fetches new jobs, scores them and writes application drafts INSIDE the app, then
 You review and edit the drafts later in the UI. Nothing reaches Gmail unless you pass --gmail-drafts (and even then
 only drafts are created; nothing is ever sent).
 
-Exit codes: 0 finished (also when there was nothing new), 1 the run failed, 2 not set up (resume / OpenAI key),
+Exit codes: 0 finished (also when there was nothing new), 1 the run failed, 2 not set up (resume / Gemini key),
 3 another run is already active (skipped).
 """
 
@@ -63,7 +63,7 @@ def run_headless(gmail_drafts: bool = False, mode: str = "incremental", deps_fac
             return 2, msg
         deps = deps_factory(session)
         if deps.ask is None:
-            msg = "Not set up: OPENAI_API_KEY is missing in .env."
+            msg = "Not set up: GEMINI_API_KEY is missing in .env."
             notify(msg)
             return 2, msg
         if pipeline.active_run(session):

@@ -22,7 +22,7 @@ DEFAULT_SETTINGS = {
     "sender": {"name": "", "phone": "", "email": "", "linkedin": ""},
     "preferences_text": "",
     "availability_line": "",
-    "openai_model": config.load_env().get("OPENAI_MODEL", "gpt-4o-mini"),
+    "openai_model": config.load_env().get("GEMINI_MODEL", config.DEFAULT_MODEL),
 }
 
 

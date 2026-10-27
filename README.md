@@ -13,11 +13,29 @@ cd .. && uv run uvicorn jobtracker.main:app --host 127.0.0.1 --port 8000
 ```
 Open http://127.0.0.1:8000. Always bind to 127.0.0.1; the app can create Gmail drafts.
 
+### Restarting later (production command)
+Setup is already done once `appdata/jobtracker.db` exists. From the project root (not `jobtracker/`):
+```bash
+uv run uvicorn jobtracker.main:app --host 127.0.0.1 --port 8000
+```
+Start a run from the UI, or from the terminal without the UI:
+```bash
+uv run python -m jobtracker.headless                  # fetch, score, draft inside the app; nothing goes to Gmail
+uv run python -m jobtracker.headless --gmail-drafts   # also create Gmail drafts (never sends)
+```
+You never run `jobtracker/pipeline.py` directly; it is a library used by the UI, `headless` and `scan`.
+If Gmail fails, the token has probably expired (7 days in Testing mode): Settings → Connect Gmail again.
+
+### Updating your resume
+Settings → Resume card → upload the new PDF/DOCX (5 MB max). It replaces the active resume; new runs use it.
+Existing jobs, drafts, statuses and past scores are kept (unchanged jobs are not re-scored automatically).
+`resume.txt` and `linkedin_profile.md` are only read by the one-time `seed` step; editing them later has no effect.
+
 Development: `uv run uvicorn jobtracker.main:app --reload` plus `cd frontend && npm run dev` (proxies /api to :8000).
 UI without a backend: `cd frontend && npm run dev:mock`.
 
 ## Configure
-- `.env` in this folder: `OPENAI_API_KEY=...` and optionally `OPENAI_MODEL=...`.
+- `.env` in this folder: `GEMINI_API_KEY=...` and optionally `GEMINI_MODEL=...` (default `gemini-2.5-flash`).
 - Gmail: put Google's OAuth `client_secret.json` in this folder, then Settings → Connect Gmail.
 - Everything else (resume, preferences, filters, sender details) is in the app's Settings page.
 

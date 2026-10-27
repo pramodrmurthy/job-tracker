@@ -45,7 +45,7 @@ def test_headless_gmail_requested_but_not_connected_keeps_drafts(session, ask):
 
 def test_headless_not_set_up_exit_codes(session, ask):
     code, msg, notes = run(session, FakeSource([]), None)  # no OpenAI key -> deps.ask is None
-    assert code == 2 and "OPENAI_API_KEY" in msg and notes
+    assert code == 2 and "GEMINI_API_KEY" in msg and notes
     session.query(Resume).delete()
     session.commit()
     code, msg, _ = run(session, FakeSource([]), ask)
